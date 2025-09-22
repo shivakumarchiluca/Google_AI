@@ -48,7 +48,7 @@ else:
     LOCATION = "us-central1"
     
     # ✅ Load service account credentials securely from Streamlit Secrets
-    service_account_info = json.loads(st.secrets["GOOGLE_APPLICATION_CREDENTIALS"])
+    service_account_info = dict(st.secrets["GOOGLE_APPLICATION_CREDENTIALS"])
     credentials = service_account.Credentials.from_service_account_info(
         service_account_info,
         scopes=["https://www.googleapis.com/auth/cloud-platform"]
@@ -441,4 +441,5 @@ else:
         
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content_text": content_text, "sql_query": sql_query, "prompt": prompt})
+
         st.rerun()
