@@ -1,0 +1,6 @@
+streamlit==1.29.0
+google-cloud-aiplatform==1.38.0
+google-cloud-dialogflow==2.24.1
+google-auth==2.23.4
+plotly==5.17.0
+pandas==2.1.4
